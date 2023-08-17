@@ -43,5 +43,9 @@ int main(int argc, const char** argv) {
 	VM_Dump(&vm);
 	VM_Free(&vm);
 
+	if (freeProgram) {
+		free(vm.program);
+	}
+
 	return 0;
 }
