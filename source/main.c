@@ -21,6 +21,8 @@ int main(int argc, const char** argv) {
 
 	VM vm;
 
+	bool freeProgram = false;
+
 	if (argc == 1) {
 		vm.program     = defaultProgram;
 		vm.programSize = sizeof(defaultProgram);
@@ -32,6 +34,8 @@ int main(int argc, const char** argv) {
 			perror("Failed to open program");
 			return 1;
 		}
+
+		freeProgram = true;
 	}
 
 	VM_Init(&vm, 256);
